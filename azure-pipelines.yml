@@ -38,15 +38,25 @@ stages:
                 backendAzureRmContainerName: 'statefile'
                 backendAzureRmKey: 'credpay.terraform.tfstate'
             - task: TerraformTask@5
+              displayName: terraform validate
               inputs:
                 provider: 'azurerm'
                 command: 'validate'
                 workingDirectory: 'terraform'
 
             - task: TerraformTask@5
+              displayName: terraform plan
               inputs:
                 provider: 'azurerm'
                 command: 'plan'
+                workingDirectory: 'terraform'
+                environmentServiceNameAzureRM: 'Swiggy-Manual'
+
+            - task: TerraformTask@5
+              displayName: terraform apply
+              inputs:
+                provider: 'azurerm'
+                command: 'apply'
                 workingDirectory: 'terraform'
                 environmentServiceNameAzureRM: 'Swiggy-Manual'
 
