@@ -27,6 +27,7 @@ resource "azurerm_kubernetes_cluster" "aks" {
     upgrade_settings {
       max_surge = "33%"
     }
+  } 
   
   node_provisioning_profile {
     mode = "Manual"
@@ -56,5 +57,4 @@ resource "azurerm_kubernetes_cluster" "aks" {
       default_node_pool[0].node_count
     ]
   }
-}
 }
