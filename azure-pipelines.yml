@@ -30,6 +30,7 @@ stages:
                 provider: 'azurerm'
                 command: 'init'
                 workingDirectory: Terraform
+                backendAzureRmUseEntraIdForAuthentication: false
                 backendServiceArm: 'Swiggy-Manual'
                 backendAzureRmOverrideSubscriptionID: '7cdba76d-54d7-4b66-844d-c9fdf4a98eef'
                 backendAzureRmResourceGroupName: 'StorageAccRG'
