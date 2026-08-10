@@ -1,17 +1,15 @@
 output "vnet_id" {
-  description = "Virtual network resource ID."
-  value       = azurerm_virtual_network.this.id
+  description = "The ID of the virtual network."
+  value = azurerm_virtual_network.vnet.id
 }
-
 output "vnet_name" {
-  description = "Virtual network name."
-  value       = azurerm_virtual_network.this.name
+  description = "The name of the virtual network."
+  value = azurerm_virtual_network.vnet.name
 }
-
 output "subnet_ids" {
-  description = "Map of subnet name -> subnet ID."
+  description = "The IDs of the subnets."
   value = {
-    aks      = azurerm_subnet.aks.id
-    postgres = azurerm_subnet.postgres.id
+    aks      = azurerm_subnet.aks_subnet.id
+    postgres = azurerm_subnet.postgres_subnet.id
   }
 }

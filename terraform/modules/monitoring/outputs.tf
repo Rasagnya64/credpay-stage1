@@ -1,9 +1,12 @@
 output "workspace_id" {
-  description = "Log Analytics workspace resource ID."
-  value       = azurerm_log_analytics_workspace.this.id
+  description = "The ID of the Log Analytics workspace."
+  value       = azurerm_log_analytics_workspace.log.id
 }
-
 output "workspace_name" {
-  description = "Log Analytics workspace name."
-  value       = azurerm_log_analytics_workspace.this.name
+  description = "The name of the Log Analytics workspace."
+  value       = azurerm_log_analytics_workspace.log.name
+}
+output "log_analytics_workspace_id" {
+  description = "The ID of the Log Analytics workspace."
+  value       = azurerm_log_analytics_workspace.log.id
 }
