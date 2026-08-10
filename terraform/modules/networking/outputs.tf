@@ -9,7 +9,7 @@ output "vnet_name" {
 output "subnet_ids" {
   description = "The IDs of the subnets."
   value = {
-    aks      = azurerm_subnet.aks_subnet.id
+    aks      = azurerm_subnet.aks_subnet.id,
     postgres = azurerm_subnet.postgres_subnet.id
   }
 }

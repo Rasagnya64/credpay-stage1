@@ -15,6 +15,6 @@ resource "azurerm_log_analytics_solution" "solution" {
   tags                  = var.tags
   plan {
     publisher = "Microsoft"
-    product   = "OMSGallery/Security"
+    product   = "OMSGallery/ContainerInsights"
   }
 }
