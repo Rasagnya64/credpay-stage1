@@ -1,0 +1,15 @@
+subscription_id               = "7cdba76d-54d7-4b66-844d-c9fdf4a98eef"
+location                      = "Canada Central"
+vnet_address_space            = "10.0.0.0/16"
+aks_subnet_prefix             = "10.0.1.0/24"
+postgres_subnet_prefix        = "10.0.2.0/24"
+node_count                    = 2
+node_min_count                = 2
+node_max_count                = 2
+vm_size                       = "Standard_DS2alds_v6"
+postgres_version              = "17"
+postgres_admin_username       = "credpayadmin"
+database_name                 = "credpay"
+log_retention_days            = 7
+key_vault_name                = "credpay-key-vault"
+key_vault_resource_group_name = "credpay-rg"
