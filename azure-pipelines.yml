@@ -24,16 +24,29 @@ stages:
             - task: TerraformInstaller@1
               inputs:
                 terraformVersion: 'latest'
-            - task: AzureCLI@3
+
+            - task: TerraformTask@5
               inputs:
-                connectionType: 'azureRM'
-                azureSubscription: 'Swiggy-Manual'
-                scriptType: 'bash'
-                scriptLocation: 'inlineScript'
+                provider: 'azurerm'
+                command: 'init'
                 workingDirectory: Terraform
-                inlineScript: |
-                  terraform init
-                  terraform plan
+                backendAzureRmUseEntraIdForAuthentication: false
+                backendServiceArm: 'Swiggy-Manual'
+                backendAzureRmOverrideSubscriptionID: '7cdba76d-54d7-4b66-844d-c9fdf4a98eef'
+                backendAzureRmResourceGroupName: 'StorageAccRG'
+                backendAzureRmStorageAccountName: 'credpayprojectsa1'
+                backendAzureRmContainerName: 'statefile'
+                backendAzureRmKey: 'credpay.terraform.tfstate'
+            # - task: AzureCLI@3
+            #   inputs:
+            #     connectionType: 'azureRM'
+            #     azureSubscription: 'Swiggy-Manual'
+            #     scriptType: 'bash'
+            #     scriptLocation: 'inlineScript'
+            #     workingDirectory: Terraform
+            #     inlineScript: |
+            #       terraform init
+            #       terraform plan
 
 
 
