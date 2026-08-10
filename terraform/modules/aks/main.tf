@@ -7,7 +7,7 @@ resource "azurerm_kubernetes_cluster" "aks" {
   dns_prefix                = var.name_prefix
   node_resource_group       = "rg-${var.name_prefix}-aks-nodes"
   automatic_upgrade_channel = "stable"
-  node_os_upgrade_channel   = "stable"
+  node_os_upgrade_channel   = "NodeImage"
   azure_active_directory_role_based_access_control {
     azure_rbac_enabled = true
     tenant_id          = data.azurerm_client_config.current.tenant_id
@@ -27,6 +27,9 @@ resource "azurerm_kubernetes_cluster" "aks" {
     upgrade_settings {
       max_surge = "33%"
     }
+  
+  node_provisioning_profile {
+    mode = "Manual"
   }
 
   identity {

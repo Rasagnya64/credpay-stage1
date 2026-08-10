@@ -49,12 +49,12 @@ module "aks" {
   node_min_count             = var.node_min_count
   node_max_count             = var.node_max_count
   vm_size                    = var.vm_size
-  log_analytics_workspace_id = module.monitoring.log_analytics_workspace_id
+  log_analytics_workspace_id = module.monitoring.workspace_id
   aks_subnet_id              = module.networking.subnet_ids["aks"]
 }
 module "keyvault" {
   source                        = "./modules/keyvault"
-  key_vault_resource_group_name = module.resourcegroup.name
+  key_vault_resource_group_name = var.key_vault_resource_group_name
   key_vault_name                = var.key_vault_name
   postgres_fqdn                 = module.postgres.fqdn
   postgres_database_name        = module.postgres.database_name

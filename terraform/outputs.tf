@@ -6,15 +6,11 @@ output "vnet_id" {
   description = "The ID of the virtual network."
   value       = module.networking.vnet_id
 }
-output "subnet_ids" {
-  description = "The IDs of the subnets."
-  value       = module.networking.subnet_ids
-}
 output "aks_cluster_name" {
   description = "The name of the AKS cluster."
   value       = module.aks.cluster_name
 }
-output "aks_resource_group_name" {
+output "aks_resource_group" {
   description = "The name of the AKS resource group."
   value       = module.resourcegroup.name
 }
